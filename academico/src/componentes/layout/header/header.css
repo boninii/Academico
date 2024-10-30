@@ -1,0 +1,11 @@
+.app-header {
+    width: calc(100% - 0);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: var(--cor_cabecalho);
+    z-index: 1;
+}
