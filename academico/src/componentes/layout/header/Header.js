@@ -10,6 +10,7 @@ const Header = () => {
         <header className='app-header'>
             <div className='app-leftarea'>
                 <h4>SISTEMA</h4>
+                <span>IFSP</span>
             </div>
             <div className='app-toggle'>
                 <i>
@@ -19,11 +20,11 @@ const Header = () => {
             <div className='app-profile'>
                 <img src={DEFAULT_IMAGEM_THUMBNAIL} alt="Avatar"/>
                 <span>Pedro Bonini</span>
-            </div>
-            <div className='app-logout'>
-                <i>
-                    <FaIcons.FaSignOutAlt/>
-                </i>
+                <div className='app-logout'>
+                    <i>
+                        <FaIcons.FaSignOutAlt/>
+                    </i>
+                </div>
             </div>
         </header>
     </>
