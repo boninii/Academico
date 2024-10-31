@@ -1,9 +1,25 @@
-import React from 'react'
+import React from 'react';
 
-const Sidebar = () => {
+import './Sidebar.css';
+import ShowItems from './ShowItems';
+
+import Items from './SidebarData';
+
+const Sidebar = ({toggle}) => {
     return (
         <>
-        
+            <div className={toggle ? 'app-sidebar-active' : 'app-sidebar'}>
+                {
+                    Items.map((Item, index) => {
+                        return (
+                            <ShowItems
+                                key={index}
+                                Item={Item}
+                            />
+                        )
+                    })
+                }
+            </div>
         </>
     )
 }
