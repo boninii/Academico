@@ -1,5 +1,6 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
+import { DEFAULT_IMAGEM_THUMBNAIL } from '../../../config/Config';
 
 import './header.css';
 
@@ -16,7 +17,7 @@ const Header = () => {
                 </i>
             </div>
             <div className='app-profile'>
-                <img src="" alt="Avatar"/>
+                <img src={DEFAULT_IMAGEM_THUMBNAIL} alt="Avatar"/>
                 <span>Pedro Bonini</span>
             </div>
             <div className='app-logout'>
