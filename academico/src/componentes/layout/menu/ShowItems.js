@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import * as BsIcons from 'react-icons/bs';
-
-const [open, setOPen] = useState(false);
+import { Link } from 'react-router-dom';
 
 const ShowItems = ({Item}) => {
+
+  const [open, setOPen] = useState(false);
   
   if (Item.sub_menu) {
     return (
       <>
-        <div className=''>
+        <div className={open ? 'app-sidebar-item-open' : 'app-sidebar-item'}>
           <div className=''>
             <span>
               {Item.icon && <i>{Item.icon}</i>}
@@ -17,10 +18,11 @@ const ShowItems = ({Item}) => {
             <i>
               <BsIcons.BsChevronBarDown
                 className='app-toggle-btn'
+                onClick={() => setOPen(!open)}
               />
             </i>
           </div>
-          <div className=''>
+          <div className='app-sidebar-content'>
             {
               Item.sub_menu.map((sub, index) => {
                   return(
@@ -40,6 +42,10 @@ const ShowItems = ({Item}) => {
   else {
     return (
       <>
+        <Link to={Item.path || '#'} className='app-sidebar-item plain'>
+          {Item.icon && <i>{Item.icon}</i>}
+          {Item.page}
+        </Link>
       </>
     )
   }
