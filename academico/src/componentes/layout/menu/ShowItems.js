@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import * as BsIcons from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
+import './ShowItems.css'
+
 const ShowItems = ({Item}) => {
 
   const [open, setOPen] = useState(false);
@@ -9,8 +11,8 @@ const ShowItems = ({Item}) => {
   if (Item.sub_menu) {
     return (
       <>
-        <div className={open ? 'app-sidebar-item-open' : 'app-sidebar-item'}>
-          <div className=''>
+        <div className={open ? 'app-sidebar-item open' : 'app-sidebar-item'}>
+          <div className='app-sidebar-title'>
             <span>
               {Item.icon && <i>{Item.icon}</i>}
               {Item.page}
