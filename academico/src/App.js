@@ -1,9 +1,9 @@
-import Layout from './componentes/layout/Layout';
+import Rotas from './rotas/Rotas';
 
 function App() {
   return (
     <>
-      <Layout/>
+      <Rotas/>
     </>
   );
 }

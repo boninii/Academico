@@ -5,10 +5,10 @@ import ShowItems from './ShowItems';
 
 import Items from './SidebarData';
 
-const Sidebar = ({toggle}) => {
+const Sidebar = ({toggleSidebar}) => {
     return (
         <>
-            <div className={toggle ? 'app-sidebar-active' : 'app-sidebar'}>
+            <div className={toggleSidebar ? 'app-sidebar-active' : 'app-sidebar'}>
                 {
                     Items.map((Item, index) => {
                         return (
