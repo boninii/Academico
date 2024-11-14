@@ -104,7 +104,7 @@ html {
 */
 
 /*  configuração para o titulo do sistema */
-
+/* 
 .app-titulo-sistema {
 	display: flex;
 	align-items: center;
@@ -124,7 +124,7 @@ html {
 .app-titulo-sistema p {
   margin-bottom: 0;
   font-style: italic;
-}
+} */
 
 /* configurações para o side bar simples */
 /* 
@@ -260,7 +260,7 @@ ativa ou desativa o menu a esquerda
 */
 
 /* Configuração do conteúdo  content - layout */
-
+/*
 .app-content {
    min-height: calc(100vh - 60px);
    margin-top: 60px;
@@ -286,7 +286,7 @@ ativa ou desativa o menu a esquerda
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
+*/
 /* configurações para tabela */
 
 .app-tabela {

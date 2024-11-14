@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom'
 
 const PrivateRoute = () => {
   return (
-    <>
-        <Layout>
-            <Outlet/>
-        </Layout>
+    <>a
+      <Layout>
+          <Outlet/>
+      </Layout>
     </>
   )
 }

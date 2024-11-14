@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import Header from './header/Header'
 import Sidebar from './menu/Sidebar'
 
+import './layout.css'
+
 const Layout = ({children}) => {
 
     const [toggle, setToggle] = useState(false);
