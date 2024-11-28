@@ -10,7 +10,7 @@ import MensagemErro from '../../componentes/mensagem/MensagemErro'
 
 const Incluir = () => {
 
-  const { usuario, errors, setErrors, handleChangeUsuario, isValid, validateAll, isFormValid } = useValidarDadosUsuario();
+  const { usuario, errors, setErrors, handleChangeUsuario, isValid, validateAll } = useValidarDadosUsuario();
 
   const onSubmitDadosUsuario = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Incluir = () => {
   }
 
   const handleSubmitDadosUsuario = (e) => {
-    // grava no banco de dados
+    // gravação no banco de dados
   }
 
   return (
@@ -161,23 +161,23 @@ const Incluir = () => {
                       </div>
                     </div>
                     <div className='form-group'>
-                      <label htmlFor='cofirmSenha' className='control-label app-label'>Confirme a senha:</label>
+                      <label htmlFor='confirmSenha' className='control-label app-label'>Confirme a senha:</label>
                       <div className='input-group'>
                         <input 
                           type="password" 
-                          id="cofirmSenha" 
-                          name="cofirmSenha" 
-                          value={usuario.cofirmSenha} 
+                          id="confirmSenha" 
+                          name="confirmSenha" 
+                          value={usuario.confirmSenha} 
                           onChange={handleChangeUsuario}
                           className={
-                            errors.cofirmSenha ? 'form-control is-invalid app-label' : 'form-control app-label'
+                            errors.confirmSenha ? 'form-control is-invalid app-label' : 'form-control app-label'
                           }
                         />
                         {
-                          errors.cofirmSenha ? (
+                          errors.confirmSenha ? (
                             <MensagemErro 
-                              errors={errors.cofirmSenha}
-                              mensagens={errors.cofirmSenha}
+                              errors={errors.confirmSenha}
+                              mensagens={errors.confirmSenha}
                             />
                           )
                           : ''
@@ -314,6 +314,7 @@ const Incluir = () => {
                               }
                             </div>
                           </div>
+                          <div></div>
                         </>
                       )
                     }
