@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as MdIcons from 'react-icons/md'
 import Navigation from '../../componentes/mensagem/Navigation'
 import { BUTTON_SIZE_SHOW_MESSAGE } from '../../config/Config'
 import TabelaPaginadaCliente from '../../componentes/tabela/TabelaPaginadaCliente'
+import useApi from '../../service/AxiosService'
 
 const headers = [
   {
@@ -25,6 +26,12 @@ const headers = [
     print: true
   },
   {
+    nome: 'Nome',
+    field: 'nomeUsuario',
+    sort: false,
+    print: true
+  },
+  {
     nome: 'E-mail',
     field: 'email',
     sort: true,
@@ -34,7 +41,12 @@ const headers = [
     nome: 'Tipo',
     field: 'tipo',
     sort: true,
-    print: true
+    print: true,
+    formatter: (value) =>(
+      <span className={`badge ${value === 1 ? "bg-success" : "bg-danger"}`}>
+        { value === 1 ? "Professor" : "Aluno" }
+      </span>
+    )
   },
   {
     nome: 'Cidade',
@@ -45,6 +57,15 @@ const headers = [
 ];
 
 const ListaPaginadaCliente = () => {
+
+  const {data, getData} = useApi();
+
+  useEffect(() => {
+    getData('usuario/listar');
+  }, [getData]);
+
+  console.log(data);
+
   return (
     <>
         <Navigation
@@ -61,6 +82,7 @@ const ListaPaginadaCliente = () => {
             <div className='app-windows'>
               <TabelaPaginadaCliente 
                 headers={headers}
+                data={data}
               />
             </div>
           </div>

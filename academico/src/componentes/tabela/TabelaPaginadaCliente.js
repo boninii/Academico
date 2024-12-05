@@ -3,7 +3,7 @@ import Table from '../table/Table'
 import TabelaHeader from '../table/TabelaHeader'
 import TableBody from '../table/TableBody'
 
-const TabelaPaginadaCliente = ({headers}) => {
+const TabelaPaginadaCliente = ({headers, data}) => {
   return (
     <>
       <Table>
@@ -12,6 +12,7 @@ const TabelaPaginadaCliente = ({headers}) => {
         />
         <TableBody 
           headers={headers}
+          currentRecords={data}
         />
       </Table>   
     </>

@@ -1,28 +1,30 @@
-import axios, { AxiosError } from 'axios'
-import { useState } from 'react'
+import axios from 'axios'
+import { useCallback, useState } from 'react'
 
 const http = axios.create ({
-    baseUrl: 'http:localhost:8080/rest' // v1
+    baseURL: 'http://localhost:8080/rest' // v1
 })
 
 const useApi = () => {
     const [data, setData] = useState([]);
-    const [errorAxios, setErrorAxios] = useState([]);
+    const [errorAxios, setErrorAxios] = useState({});
 
-    const getData = async (url) => {
-        try {
-            const response = await http.get(url);
-            setData(response.data);
-            setErrorAxios(null);
-        }
-        catch(error) {
-            setErrorAxios(error);
-            setData(null);
-        }
-        finally {
-
-        }
-    }
+    const getData = useCallback(
+        async (url) => {
+            try {
+                const response = await http.get(url);
+                setData(response.data);
+                setErrorAxios(null);
+            }
+            catch(error) {
+                setErrorAxios(error);
+                setData(null);
+            }
+            finally {
+    
+            }
+        }, []
+    )
 
     return {
         data,
