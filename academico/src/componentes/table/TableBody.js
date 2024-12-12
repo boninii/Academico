@@ -1,6 +1,10 @@
 import React from 'react'
+import RowActions from './RowActions'
 
-const TableBody = ({headers, currentRecords}) => {
+const TableBody = ({headers, currentRecords, path}) => {
+
+  const idField = headers.find((header) => header.nome.toLowerCase() === 'id') ?.field;
+
   return (
     <tbody>
         {
@@ -18,6 +22,10 @@ const TableBody = ({headers, currentRecords}) => {
                     )
                   ))
                 }
+                <RowActions
+                  path={path}
+                  id={idField}
+                />
               </tr>
             ))
           ) : (

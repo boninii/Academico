@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import * as FaIcons from 'react-icons/fa'
 import * as MdIcons from 'react-icons/md'
 import Navigation from '../../componentes/mensagem/Navigation'
-import { BUTTON_SIZE_SHOW_MESSAGE } from '../../config/Config'
+import { BUTTON_SIZE_SHOW_MESSAGE, USUARIO } from '../../config/Config'
 import TabelaPaginadaCliente from '../../componentes/tabela/TabelaPaginadaCliente'
 import useApi from '../../service/AxiosService'
 
@@ -52,7 +52,7 @@ const headers = [
     nome: 'Cidade',
     field: 'nomeCidade',
     sort: false,
-    print: true
+    print: true 
   },
 ];
 
@@ -61,7 +61,7 @@ const ListaPaginadaCliente = () => {
   const {data, getData} = useApi();
 
   useEffect(() => {
-    getData('usuario/listar');
+    getData('/usuario/listar');
   }, [getData]);
 
   console.log(data);
@@ -83,6 +83,7 @@ const ListaPaginadaCliente = () => {
               <TabelaPaginadaCliente 
                 headers={headers}
                 data={data}
+                path={USUARIO}
               />
             </div>
           </div>
